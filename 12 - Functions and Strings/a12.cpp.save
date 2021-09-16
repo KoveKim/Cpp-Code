@@ -1,0 +1,82 @@
+// Khristian Kim, CS 135-1003, Assignment 12
+// Read file data, check for palindromes, and process strings to palindromes.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+string process(string);
+/*
+bool is_palindrome(string);
+
+int palindrome_fix_location(string);
+
+string palindrome_addition(string, int);
+*/
+int main()
+{
+	ifstream inFile;
+	inFile.open("data");
+	string preString;
+
+	while(getline(inFile, preString))
+	{
+		cout << "Original line: " << preString << endl;
+		cout << "Processed line: " << process(preString) << endl;
+	}
+
+	inFile.close();
+
+	return 0;
+}
+
+// Return a string that is lowercase with no punctuation or spacing.
+string process(string preString)
+{
+	for (size_t i = 0; i <= preString.length(); i++)
+	{
+		if (!isalnum(preString[i]))
+		{
+			do {
+				preString.erase(i, 1);
+			} while (preString[i] != );
+		}
+
+		else
+			tolower(preString[i]);
+	}
+
+	string procString = preString;
+
+	return procString;
+}
+/*
+// Uses a recursive method to determine if the processed string is a palindrome.
+bool is_palindrome(string &procString)
+{
+	adf
+
+	if (
+		return true;
+	else
+		return false;
+}
+
+// Return a location where text can be added to the non-palindrome to make it a palindrome.
+int palindrome_fix_location(string &palinPos)
+{
+	adf
+
+	return 1; // Change this later.
+)
+
+string palindrome_addition(string &addText, int &palinPos)
+{
+	adf
+
+	return addText;
+}
+*/
